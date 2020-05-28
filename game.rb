@@ -1,59 +1,69 @@
 puts "Програма загадала число от 1 до 15, угадаешь за 3 попытки?"
 
+puts "Привет, как тебя зовут?"
+nam = gets.chomp.to_s
 number = rand(1..15)
-
+puts "У тебя есть 3 попытки что бы угадать число"
 a = gets.chomp.to_i
 
-if a.to_i == number
-	puts "Вы выиграли"
+# first
+if a == number
+	puts 'Вы угадали, поздравляю Вас ' + nam
 	exit
-else 
-	if a > number
-		puts 'Нужно меньше'
 	else
-		puts 'Нужно больше'
-	end
-		if (a-number).abs < 3
-				puts 'Тепло'
-			else
-    			puts 'Холодно'
-    		end
-    	end
-# Попытка 2
-a = gets.chomp.to_i
 
-if a.to_i == number
-	puts "Вы выиграли"
-	exit
-else 
 	if a > number
-		puts 'Нужно меньше'
+		b = "нужно меньше"
 	else
-		puts 'Нужно больше'
+		b = "нужно больше"
+		
+		if (a - number).abs <3
+			puts "Тепло, " + b.to_s 
+		else
+			puts "Холодно, " + b.to_s 
+		end
 	end
-		if (a-number).abs < 3
-				puts 'Тепло'
-			else
-    			puts 'Холодно'
-    		end
-    	end
-  # Попытка 3
-a = gets.chomp.to_i
+end
 
-if a.to_i == number
-	puts "Вы выиграли"
+# second
+a = gets.chomp.to_i
+if a == number
+	puts 'Вы угадали, поздравляю Вас ' + nam
 	exit
-else 
-	if a > number
-		puts 'Нужно меньше'
 	else
-		puts 'Нужно больше'
+
+	if a > number
+		b = "нужно меньше"
+	else
+		b = "нужно больше"
+		
+		if (a - number).abs <3
+			puts "Тепло, " + b.to_s 
+		else
+			puts "Холодно, " + b.to_s 
+		end
 	end
-		if (a-number).abs < 3
-				puts 'Тепло'
-			else
-    			puts 'Холодно'
-    		end
-    	end
+end
+
+
+# third
+a = gets.chomp.to_i
+if a == number
+	puts 'Вы угадали, поздравляю Вас ' + nam
+	exit
+	else
+
+	if a > number
+		b = "нужно меньше"
+	else
+		b = "нужно больше"
+		
+		if (a - number).abs <3
+			puts "Тепло, " + b.to_s 
+		else
+			puts "Холодно, " + b.to_s 
+		end
+	end
+end
 
 puts 'В этот раз вам не повезло. Было загадано число ' + number.to_s
